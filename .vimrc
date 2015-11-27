@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
@@ -22,6 +22,8 @@ Plugin 'scrooloose/nerdtree.git'
 " To get plugins from Vim Scripts, you can reference the plugin
 " by name as it appears on the site
 Plugin 'Buffergator'
+
+call vundle#end()
 
 " Now we can turn our filetype functionality back on
 syntax enable
