@@ -16,6 +16,9 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'othree/html5.vim'
 Plugin 'gilgigilgil/anderson.vim'
 
+" Show git diff
+Plugin 'airblade/vim-gitgutter'
+
 " We could also add repositories with a ".git" extension
 Plugin 'scrooloose/nerdtree.git'
 
