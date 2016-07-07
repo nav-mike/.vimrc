@@ -1,3 +1,5 @@
+set shell=/bin/bash
+
 set nocompatible
 filetype off
 
@@ -23,6 +25,8 @@ set history=256 " Number of things to remember in history
 set autowrite " Writes on make/shell commands
 set ruler " Ruler on
 set nowrap " Line wrapping off
+set guifont=Monaco:h20
+set guifont=Monospace\ 20
 set timeoutlen=250 " Time to wait after ESC (default causes an annoying delay)
 
 " Formatting (some these are for coding in C and C++)
@@ -45,13 +49,16 @@ set list
 set noerrorbells " No noise
 set laststatus=2 " Always show status line
 
-set t_Co=256
+"syntax on
+"set t_Co=256
+set t_Co=256 
 
 " copy/paste via Ctrl+C/Ctrl+V
 vmap <C-C> "+yi
 vmap <C-V> "+gPi
 
-set mousehide " Hide mouse while typing
+set t_Co=256 
+
 set mouse=a " Turn on mouse support
 set novisualbell " No blink
 set showtabline=0
@@ -61,8 +68,10 @@ set foldcolumn=1 " + for code blocks
 set nobackup
 set noswapfile
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
 
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
@@ -72,11 +81,15 @@ Plugin 'tpope/vim-rails'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-haml'
 Plugin 'jistr/vim-nerdtree-tabs'
-Bundle 'slim-template/vim-slim.git'
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'slim-template/vim-slim.git'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'othree/html5.vim'
 Plugin 'gilgigilgil/anderson.vim'
-Plugin 'amiorin/vim-project'
+Plugin 'jpo/vim-railscasts-theme'
+plugin 'amiorin/vim-project'
+plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " comment code
 Plugin 'scrooloose/nerdcommenter'
@@ -93,9 +106,11 @@ Plugin 'scrooloose/nerdtree.git'
 " by name as it appears on the site
 Plugin 'Buffergator'
 
+call vundle#end()
+
 " Now we can turn our filetype functionality back on
-syntax enable
-colorscheme anderson
+syntax on
+colorscheme railscasts
 filetype plugin indent on
 autocmd VimEnter * NERDTree
 
